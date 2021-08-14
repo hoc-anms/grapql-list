@@ -1,24 +1,8 @@
 import {
-    ApolloClient,
-    InMemoryCache,
-    ApolloProvider,
     useQuery,
-    gql,
   } from "@apollo/client";
 
-const getBooksQuery = gql`
-  {
-      books {
-          name
-          genre
-          id
-          author {
-              name
-              age
-          }
-      }
-  }
-`
+import getBooksQuery from "../utils/queries";
 
 function BookList() {
     const data = useQuery(getBooksQuery);
